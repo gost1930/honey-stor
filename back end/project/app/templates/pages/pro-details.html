@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+
+    <!-- Product Details Section -->
+    <section class="container mx-auto py-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-10">
+            <!-- Product Image -->
+            <div class="text-center relative ">
+                <div class="slider-container relative l h-[250px] min-h-[200px] md:h-full mx-auto">
+                    <div id="salde-number" class="salde-number " style="display: none;">
+                       
+                    </div>
+                    
+                        {% if det.img1  %}
+                        <img id="1" src="{{ det.img1.url }}"  class="w-full  min-h-[80%] rounded-lg shadow-lg absolute top-0 left-0 opacity-100 transition-opacity duration-1000"  alt="">
+                        {% endif %}
+                        
+                        {% if det.img2 %}
+                        <img id="2" src="{{ det.img2.url }}"  class="w-full min-h-[80%] rounded-lg shadow-lg absolute top-0 left-0 opacity-100 transition-opacity duration-1000" alt="">
+                        {% endif %}
+
+                        {% if det.img3 %}
+                        <img id="4" src="{{ det.img3.url }}"  class="w-full min-h-[80%] rounded-lg shadow-lg absolute top-0 left-0 opacity-100 transition-opacity duration-1000" alt="">
+                        {% endif %}
+                    <div id="indicators" class="indicator" style="display: none;">
+        
+                    </div>
+                    <button id="prev" class="prev absolute top-[50%] left-1 bg-gray-200 hover:bg-gray-400 rounded-full w-10 h-10 z-50">
+                        <i class='bx bx-chevron-left'></i>
+                    </button>
+                    <button id="next" class="next absolute top-[50%] right-1 bg-gray-200 hover:bg-gray-400 rounded-full w-10 h-10 z-50">
+                        <i class='bx bx-chevron-right'></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Product Description -->
+            <div class="px-4 md:px-0">
+                <h2 class="text-3xl font-bold text-honey-brown">{{det.title}}</h2>
+                <p class="mt-4 text-honey-green">{{det.price}} DA</p>
+                {{det.details|safe}}
+            </div>
+        </div>
+    </section>
+
+
+
+
+{% endblock body %}

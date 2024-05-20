@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+    <!-- Blog Header -->
+    <header class="bg-honey-amber text-center py-32 bg-cover" style="background-image: url({% static './dist/img/hero.jpg' %});">
+        <h1 class="text-5xl font-bold text-white">Our Blog</h1>
+        <p class="text-white mt-4">Read the latest articles and updates about our honey products</p>
+    </header>
+
+    <!-- Blog Posts Section -->
+    <section class="container mx-auto py-20">
+        <h2 class="text-3xl font-bold text-center">Latest Posts</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-10">
+            {% for blog in blog %}
+            <!-- Blog Post 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="blog1.jpg" alt="Blog Post 1" class="w-full h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-bold mt-4 text-honey-brown">{{blog.title}}</h3>
+                <p class="mt-2 text-honey-green">{{blog.details}}</p>
+                <a href="{% url 'app:blog' blog.slug %}" class="text-honey-yellow font-semibold mt-4 inline-block">Read More</a>
+            </div>
+            {% endfor %}
+            <!-- Add more blog posts as needed -->
+        </div>
+    </section>
+
+{% endblock body %}

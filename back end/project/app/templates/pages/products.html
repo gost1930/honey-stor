@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+    <!-- header start -->
+    <header class="bg-honey-amber text-center py-32 bg-cover" style="background-image: url({% static './dist/img/hero.jpg' %});">
+        <h1 class="text-5xl font-bold text-honey-green">Honey Store</h1>
+        <p class=" mt-4 text-honey-green">Discover the finest honey products directly from nature</p>
+        <a href="#product" class="text-center mt-8 inline-block text-2xl bg-white text-honey-amber font-semibold px-6 py-3 rounded-full hover:text-white hover:bg-[#355E3B] hover:scale-[1.1] hover:shadow-md hover:shadow-black transition-all w-fit duration-500"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/fnsllnpu.json"
+                trigger="hover"
+                style="width:25px;height:24px">
+            </lord-icon>Shop Now</a>    </header>
+    <!-- header end -->
+
+    <!-- content start -->
+    <section class="container mx-auto py-20" id="product">
+        <h2 class="text-3xl font-bold text-center">Our Products</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+            {% for product in pro %}
+            <div class="bg-white p-6 rounded-lg shadow-lg">
+                <img src="./dist/img/product/1.jpg" alt="Honey" class="w-full h-48 object-cover rounded-lg">
+                <h3 class="text-xl font-bold mt-4 text-honey-brown">{{product}}</h3>
+                <p class="mt-2 text-honey-green">{{product.details}}</p>
+                <a href="{% url "app:details" product.slug %}" class="text-honey-yellow font-semibold mt-4 inline-block">Learn More</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    <!-- content end -->
+    {% endblock body %}

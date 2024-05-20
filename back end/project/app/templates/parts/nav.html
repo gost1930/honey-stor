@@ -1,0 +1,31 @@
+
+
+
+<!-- nav-bar start -->
+<nav class="bg-honey-yellow p-4 shadow-lg z-50 opacity-100">
+    <div class="container mx-auto flex justify-between relative  text-center ">
+        <a href="#" class="text-honey-brown text-2xl font-bold">Honey Store</a>
+        <div class="hidden md:flex">
+            <a href="./index.html" class="text-honey-brown mx-2 text-center">Home</a>
+            <a href="./products.html" class="text-honey-brown mx-2">Products</a>
+            <a href="./blogs.html" class="text-honey-brown mx-2">Blog</a>
+            <a href="./about.html" class="text-honey-brown mx-2">About Us</a>
+            <a href="./contact.html" class="text-honey-brown mx-2">Contact</a>
+        </div>
+        <div class="flex flex-col absolute z-10  w-full text-center top-[-400px] bg-honey-yellow  transition-all duration-500 berger">
+            <a href="./index.html" class="text-honey-brown mx-2 text-center">Home</a>
+            <a href="./products.html" class="text-honey-brown mx-2">Products</a>
+            <a href="./blogs.html" class="text-honey-brown mx-2">Blog</a>
+            <a href="./about.html" class="text-honey-brown mx-2">About Us</a>
+            <a href="./contact.html" class="text-honey-brown mx-2">Contact</a>
+        </div>
+        <button class="flex md:hidden" name="menu" onclick="Menu(this)"><i class='bx bx-menu text-2xl text-center'></i></button>
+    </div>
+    <script>
+        function Menu(e){
+          let list = document.querySelector('.berger');
+          e.name === 'menu' ? (e.name = "close",list.classList.add('top-[45px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[45px]'),list.classList.remove('opacity-100'))
+        }
+      </script>
+</nav>
+<!-- nav-bar end -->

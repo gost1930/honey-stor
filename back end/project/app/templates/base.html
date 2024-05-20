@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey Store</title>
+    <!-- CSS Links Start -->
+    <link rel="stylesheet" href="{% static './dist/style.css' %}">
+    <link rel="stylesheet" href="{% static './dist/index.css' %}">
+    <!-- CSS Links End -->
+
+    <!-- icons start -->
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- icons end -->
+     
+    <style>
+        /* Tailwind CSS custom colors */
+        .bg-honey-yellow { background-color: #FFDD57; }
+        .text-honey-brown { color: #6B4226; }
+        .text-honey-green { color: #355E3B; }
+        .bg-honey-amber { background-color: #FFA726; }
+        
+    </style>
+</head>
+<body class="bg-white text-honey-brown font-sans">
+    {% include "./parts/nav.html" %}
+
+    {% block body %}
+
+    {% endblock body %}
+    {% include "./parts/footer.html" %}
+<!-- js start -->
+<script src="{% static './dist/js/slide-img.js' %}"></script>
+<script src="{% static './dist/js/js.js' %}"></script>
+<!-- js end -->
+</body>
+</html>
+
+
+
+
+

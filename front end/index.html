@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Honey Store</title>
+    <!-- CSS Links Start -->
+    <link rel="stylesheet" href="./dist/style.css">
+    <link rel="stylesheet" href="./dist/index.css">
+    <!-- CSS Links End -->
+
+    <!-- icons start -->
+    <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+    <!-- icons end -->
+     
+    <style>
+        /* Tailwind CSS custom colors */
+        .bg-honey-yellow { background-color: #FFDD57; }
+        .text-honey-brown { color: #6B4226; }
+        .text-honey-green { color: #355E3B; }
+        .bg-honey-amber { background-color: #FFA726; }
+        
+    </style>
+</head>
+<body class="bg-white text-honey-brown font-sans">
+
+<!-- nav-bar start -->
+<nav class="bg-honey-yellow p-4 shadow-lg z-50 opacity-100">
+    <div class="container mx-auto flex justify-between relative  text-center ">
+        <a href="#" class="text-honey-brown text-2xl font-bold">Honey Store</a>
+        <div class="hidden md:flex">
+            <a href="./index.html" class="text-honey-brown mx-2 text-center">Home</a>
+            <a href="./products.html" class="text-honey-brown mx-2">Products</a>
+            <a href="./blogs.html" class="text-honey-brown mx-2">Blog</a>
+            <a href="./about.html" class="text-honey-brown mx-2">About Us</a>
+            <a href="./contact.html" class="text-honey-brown mx-2">Contact</a>
+        </div>
+        <div class="flex flex-col absolute z-10  w-full text-center top-[-400px] bg-honey-yellow  transition-all duration-500 berger">
+            <a href="./index.html" class="text-honey-brown mx-2 text-center">Home</a>
+            <a href="./products.html" class="text-honey-brown mx-2">Products</a>
+            <a href="./blogs.html" class="text-honey-brown mx-2">Blog</a>
+            <a href="./about.html" class="text-honey-brown mx-2">About Us</a>
+            <a href="./contact.html" class="text-honey-brown mx-2">Contact</a>
+        </div>
+        <button class="flex md:hidden" name="menu" onclick="Menu(this)"><i class='bx bx-menu text-2xl text-center'></i></button>
+    </div>
+    <script>
+        function Menu(e){
+          let list = document.querySelector('.berger');
+          e.name === 'menu' ? (e.name = "close",list.classList.add('top-[45px]') , list.classList.add('opacity-100')) :( e.name = "menu" ,list.classList.remove('top-[45px]'),list.classList.remove('opacity-100'))
+        }
+      </script>
+</nav>
+<!-- nav-bar end -->
+
+    <!-- header start -->
+    <header class="flex flex-col md:flex-row justify-around items-center bg-honey-amber text-center bg-cover overflow-hidden" style="background-image: url(./dist/img/hero.jpg);">
+        <div class="flex flex-col items-center justify-center px-10">
+            <h1 class="text-5xl font-bold text-honey-green ">Welcome to the Best Honey Store</h1>
+        <p class="text-honey-green  mt-4">Discover the finest honey products directly from nature</p>
+        <a href="#products" class="text-center mt-8 inline-block text-2xl bg-white text-honey-amber font-semibold px-6 py-3 rounded-full hover:text-white hover:bg-[#355E3B] hover:scale-[1.1] hover:shadow-md hover:shadow-black transition-all w-fit duration-500"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/fnsllnpu.json"
+                trigger="hover"
+                style="width:30px;height:30px">
+            </lord-icon>See More</a>
+        
+        </div>
+        <img src="./dist/img/hero1.png" class="animate-spin anima" alt="" style="animation-duration: 30s">
+    </header>
+    <!-- header end -->
+
+
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto py-10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-honey-brown mb-6">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./dist/img/product/1.jpg" alt="Honey" class="w-full h-48 object-cover rounded-lg">
+                    <h3 class="text-xl font-bold mt-4 text-honey-brown">Pure Honey</h3>
+                    <p class="mt-2 text-honey-green">Delicious pure honey sourced from the best farms.</p>
+                    <a href="./pro-details.html" class="text-honey-yellow font-semibold mt-4 inline-block">Learn More</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./dist/img/product/2.jpg" alt="Honey" class="w-full h-48 object-cover rounded-lg">
+                    <h3 class="text-xl font-bold mt-4 text-honey-brown">Organic Honey</h3>
+                    <p class="mt-2 text-honey-green">100% organic honey with no additives.</p>
+                    <a href="./pro-details.html" class="text-honey-yellow font-semibold mt-4 inline-block">Learn More</a>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="./dist/img/product/3.jpg" alt="Honey" class="w-full h-48 object-cover rounded-lg">
+                    <h3 class="text-xl font-bold mt-4 text-honey-brown">Wildflower Honey</h3>
+                    <p class="mt-2 text-honey-green">Wildflower honey with a unique taste.</p>
+                    <a href="./pro-details.html" class="text-honey-yellow font-semibold mt-4 inline-block">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+  <section class="px-2 md:px-20">
+      <!-- About Us Section -->
+      <section id="about" class="bg-honey-yellow py-10 px-2 md:px-10 rounded-xl mb-10">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-honey-brown mb-6">About Us</h2>
+            <p class="text-lg text-honey-green">Honey Company is dedicated to providing the finest honey products directly from nature. We believe in the power of natural ingredients and their numerous benefits for health and well-being.</p>
+        </div>
+    </section>
+
+   <!-- Contact Us Section -->
+   <section id="contact" class="bg-honey-amber py-10 px-2 md:px-10 rounded-xl mb-10">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-honey-brown mb-6">Contact Us</h2>
+        <form action="#" method="POST" class="space-y-4">
+            <div>
+                <label for="name" class="block text-lg text-honey-brown mb-2">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-honey-green" required>
+            </div>
+            <div>
+                <label for="email" class="block text-lg text-honey-brown mb-2">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-honey-green" required>
+            </div>
+            <div>
+                <label for="message" class="block text-lg text-honey-brown mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" class="w-full px-4 py-2 border border-gray-300 rounded-md resize-none focus:outline-none focus:border-honey-green" required></textarea>
+            </div>
+            <button type="submit" class="bg-honey-yellow text-white font-semibold py-2 px-6 rounded-md hover:bg-orange-600 hover:scale-125 transition-all">Send Message</button>
+        </form>
+    </div>
+</section>
+
+  </section>
+   <!-- footer start -->
+   <footer class="bg-honey-yellow text-honey-brown py-10 px-10">
+    <div class="container mx-auto flex flex-col md:flex-row justify-between items-center">
+        <div class="mb-6 md:mb-0">
+            <a href="#" class="text-2xl font-bold text-honey-brown">Honey Store</a>
+            <p class="mt-2 text-honey-green">Finest honey products directly from nature.</p>
+        </div>
+        <div class="flex space-x-4">
+            <a href="#" class="text-honey-brown hover:text-honey-amber">Home</a>
+            <a href="#" class="text-honey-brown hover:text-honey-amber">Products</a>
+            <a href="#" class="text-honey-brown hover:text-honey-amber">Blog</a>
+            <a href="#" class="text-honey-brown hover:text-honey-amber">About Us</a>
+            <a href="#" class="text-honey-brown hover:text-honey-amber">Contact</a>
+        </div>
+    </div>
+    <div class="container mx-auto mt-8 flex justify-center space-x-6">
+        <a href="#" class="text-honey-brown hover:text-honey-amber">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <!-- أيقونة فيسبوك -->
+                <path d="M22.675 0H1.325C0.593 0 0 0.593 0 1.325v21.351C0 23.407 0.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.894-4.785 4.66-4.785 1.325 0 2.464 0.099 2.796 0.143v3.24l-1.918 0.001c-1.504 0-1.795 0.715-1.795 1.763v2.31h3.587l-0.467 3.622h-3.12V24h6.11C23.407 24 24 23.407 24 22.675V1.325C24 0.593 23.407 0 22.675 0z"/>
+            </svg>
+        </a>
+        <a href="#" class="text-honey-brown hover:text-honey-amber">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <!-- أيقونة تويتر -->
+                <path d="M24 4.557c-0.883 0.392-1.832 0.656-2.828 0.775 1.017-0.611 1.798-1.574 2.165-2.723-0.951 0.564-2.005 0.974-3.127 1.194-0.897-0.956-2.178-1.555-3.594-1.555-2.717 0-4.92 2.203-4.92 4.917 0 0.386 0.044 0.761 0.128 1.122-4.087-0.205-7.713-2.164-10.14-5.144-0.423 0.725-0.666 1.567-0.666 2.465 0 1.701 0.867 3.197 2.187 4.076-0.806-0.026-1.566-0.247-2.229-0.617v0.062c0 2.375 1.689 4.358 3.933 4.805-0.412 0.112-0.846 0.171-1.294 0.171-0.317 0-0.625-0.031-0.927-0.087 0.626 1.956 2.444 3.379 4.6 3.419-1.683 1.319-3.808 2.106-6.115 2.106-0.397 0-0.789-0.023-1.175-0.068 2.18 1.398 4.768 2.213 7.548 2.213 9.057 0 14.009-7.508 14.009-14.009 0-0.213-0.004-0.425-0.013-0.637 0.961-0.694 1.796-1.562 2.457-2.549z"/>
+            </svg>
+        </a>
+        <a href="#" class="text-honey-brown hover:text-honey-amber">
+            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <!-- أيقونة إنستغرام -->
+                <path d="M12 2.163c3.204 0 3.584 0.012 4.849 0.07 1.259 0.058 2.084 0.264 2.581 0.441 0.631 0.22 1.086 0.485 1.566 0.965 0.48 0.48 0.745 0.935 0.965 1.566 0.177 0.497 0.383 1.322 0.441 2.581 0.058 1.265 0.07 1.645 0.07 4.849s-0.012 3.584-0.07 4.849c-0.058 1.259-0.264 2.084-0.441 2.581-0.22 0.631-0.485 1.086-0.965 1.566-0.48 0.48-0.935 0.745-1.566 0.965-0.497 0.177-1.322 0.383-2.581 0.441-1.265 0.058-1.645 0.07-4.849 0.07s-3.584-0.012-4.849-0.07c-1.259-0.058-2.084-0.264-2.581-0.441-0.631-0.22-1.086-0.485-1.566-0.965-0.48-0.48-0.745-0.935-0.965-1.566-0.177-0.497-0.383-1.322-0.441-2.581-0.058-1.265-0.07-1.645-0.07-4.849s0.012-3.584 0.07-4.849c0.058-1.259 0.264-2.084 0.441-2.581 0.22-0.631 0.485-1.086 0.965-1.566 0.48-0.48 0.935-0.745 1.566-0.965 0.497-0.177 1.322-0.383 2.581-0.441 1.265-0.058 1.645-0.07 4.849-0.07zM12 0c-3.259 0-3.667 0.013-4.947 0.072-1.276 0.059-2.45 0.273-3.334 0.598-0.904 0.333-1.672 0.779-2.436 1.543s-1.21 1.532-1.543 2.436c-0.325 0.884-0.539 2.058-0.598 3.334-0.059 1.28-0.072 1.688-0.072 4.947s0.013 3.667 0.072 4.947c0.059 1.276 0.273 2.45 0.598 3.334 0.333 0.904 0.779 1.672 1.543 2.436s1.532 1.21 2.436 1.543c0.884 0.325 2.058 0.539 3.334 0.598 1.28 0.059 1.688 0.072 4.947 0.072s3.667-0.013 4.947-0.072c1.276-0.059 2.45-0.273 3.334-0.598 0.904-0.333 1.672-0.779 2.436-1.543s1.21-1.532 1.543-2.436c0.325-0.884 0.539-2.058 0.598-3.334 0.059-1.28 0.072-1.688 0.072-4.947s-0.013-3.667-0.072-4.947c-0.059-1.276-0.273-2.45-0.598-3.334-0.333-0.904-0.779-1.672-1.543-2.436s-1.532-1.21-2.436-1.543c-0.884-0.325-2.058-0.539-3.334-0.598-1.28-0.059-1.688-0.072-4.947-0.072z"/>
+                <path d="M12 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.162 6.162 6.162 6.162-2.759 6.162-6.162-2.759-6.162-6.162-6.162zM12 15.525c-1.944 0-3.525-1.581-3.525-3.525s1.581-3.525 3.525-3.525 3.525 1.581 3.525 3.525-1.581 3.525-3.525 3.525z"/>
+                <circle cx="18.406" cy="5.594" r="1.44"/>
+            </svg>
+        </a>
+    </div>
+    <div class="container mx-auto mt-6 text-center">
+        <p>&copy; 2024 Honey Store. All rights reserved.</p>
+    </div>
+</footer>
+   <!-- footer end -->
+</body>
+</html>

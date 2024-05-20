@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body %}
+
+    <!-- Article Details -->
+    <section class="container mx-auto py-10">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl font-bold text-honey-brown mb-4">{{det.name}}</h1>
+            <p class="text-honey-green">Published on {{det.published_at}} by {{det.author}} </p>
+            <img src="{{ det.img.url }}" alt="Honey Article" class="w-full rounded-lg shadow-lg mt-6">
+            <div class="mt-8">
+                {{det.details|safe}}
+            </div>
+        </div>
+    </section>
+
+    {% endblock body %}

@@ -1,0 +1,74 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block body %}
+
+    <!-- header start -->
+    <header class="flex flex-col md:flex-row justify-around items-center bg-honey-amber text-center bg-cover overflow-hidden" style="background-image: url({% static './dist/img/hero.jpg' %});">
+        <div class="flex flex-col items-center justify-center px-10">
+            <h1 class="text-5xl font-bold text-honey-green ">Welcome to the Best Honey Store</h1>
+        <p class="text-honey-green  mt-4">Discover the finest honey products directly from nature</p>
+        <a href="#products" class="text-center mt-8 inline-block text-2xl bg-white text-honey-amber font-semibold px-6 py-3 rounded-full hover:text-white hover:bg-[#355E3B] hover:scale-[1.1] hover:shadow-md hover:shadow-black transition-all w-fit duration-500"><script src="https://cdn.lordicon.com/lordicon.js"></script>
+            <lord-icon
+                src="https://cdn.lordicon.com/fnsllnpu.json"
+                trigger="hover"
+                style="width:30px;height:30px">
+            </lord-icon>See More</a>
+        
+        </div>
+        <img src="{% static './dist/img/hero1.png' %}" class="animate-spin anima" alt="" style="animation-duration: 30s">
+    </header>
+    <!-- header end -->
+
+
+    <!-- Products Section -->
+    <section id="products" class="container mx-auto py-10">
+        <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-bold text-honey-brown mb-6">Our Products</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mt-10">
+                {% for product in pro %}
+                <div class="bg-white p-6 rounded-lg shadow-lg">
+                    <img src="{{ product.img1.url }}" alt="Honey" class="w-full h-48 object-cover rounded-lg">
+                    <h3 class="text-xl font-bold mt-4 text-honey-brown">{{product.title}}</h3>
+                    <p class="mt-2 text-honey-green">{{product.price}} DA</p>
+                    <a href="{% url 'app:details' product.slug %}" class="text-honey-yellow font-semibold mt-4 inline-block">Learn More</a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+  <section class="px-2 md:px-20">
+      <!-- About Us Section -->
+      <section id="about" class="bg-honey-yellow py-10 px-2 md:px-10 rounded-xl mb-10">
+        <div class="container">
+            <h2 class="text-3xl font-bold text-honey-brown mb-6">About Us</h2>
+            <p class="text-lg text-honey-green">Honey Company is dedicated to providing the finest honey products directly from nature. We believe in the power of natural ingredients and their numerous benefits for health and well-being.</p>
+        </div>
+    </section>
+
+   <!-- Contact Us Section -->
+   <section id="contact" class="bg-honey-amber py-10 px-2 md:px-10 rounded-xl mb-10">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-honey-brown mb-6">Contact Us</h2>
+        <form action="#" method="POST" class="space-y-4">
+            <div>
+                <label for="name" class="block text-lg text-honey-brown mb-2">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-honey-green" required>
+            </div>
+            <div>
+                <label for="email" class="block text-lg text-honey-brown mb-2">Email</label>
+                <input type="email" id="email" name="email" placeholder="Your Email" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:border-honey-green" required>
+            </div>
+            <div>
+                <label for="message" class="block text-lg text-honey-brown mb-2">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Your Message" class="w-full px-4 py-2 border border-gray-300 rounded-md resize-none focus:outline-none focus:border-honey-green" required></textarea>
+            </div>
+            <button type="submit" class="bg-honey-yellow text-white font-semibold py-2 px-6 rounded-md hover:bg-orange-600 hover:scale-125 transition-all">Send Message</button>
+        </form>
+    </div>
+</section>
+  </section>
+
+  {% endblock body %}

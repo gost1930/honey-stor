@@ -1,0 +1,92 @@
+*{
+    scroll-behavior: smooth;
+}
+
+.slider-container{
+    margin: 10px auto;
+    position: relative;
+}
+
+.slider-container img {
+    max-width: 100%;
+    max-height: 100%;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+
+.slider-container img.active{
+    opacity: 1;
+}
+
+.slider-container .salde-number {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background-color: rgba(0,0,0,.6);
+    color: #FFF;
+    font-size: 20px;
+    z-index: 2;
+    border-radius: 6px;
+    padding: 3px;
+}
+
+.slider-controls {
+    width: 800px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.slider-controls .prev,
+.slider-controls .next {
+    background-color: #009688;
+    color: #FFF;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer; 
+    border-radius: 4px;
+    padding: 5px;
+    user-select: none;
+    width: 20%;
+    
+}
+
+.slider-controls .prev{
+    float: left;
+}
+
+.slider-controls .next {
+    float: right;
+}
+
+.prev.disable,
+.next.disable {
+    display: none;
+}
+
+.slider-controls .indicators ul {
+    list-style: none;
+    margin: 0;
+    text-align: center;
+}
+
+.slider-controls .indicators ul li {
+    display: inline-block;
+    background-color: #F6F6F6;
+    color: #333;
+    font-weight: bold;
+    height: 28px;
+    width: 28px;
+    border-radius: 4px;
+    margin: 0 2px;
+    line-height: 28px;
+    cursor: pointer;
+
+}
+
+.slider-controls .indicators ul li.active{
+    background-color: #009688;
+    color: #FFF;
+}
